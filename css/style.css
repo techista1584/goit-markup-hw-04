@@ -345,24 +345,20 @@ body {
   flex-shrink: 0;
   padding-top: 101.5px;
   padding-bottom: 100px;
-  display: flex;
   justify-content: center;
+  /* align-items: center; */
 }
 
 .section-footer {
   display: flex;
-}
-.paragraph-container {
-  display: flex;
-  flex-direction: column;
-  justify-content: left;
+  justify-content:space-around;
 }
 
 .socmed-container {
-  display: flex;
+  /* display: flex;
   flex-direction: column;
   justify-content: left;
-  align-items: left;
+  align-items: left; */
 }
 
 .footer-logo {
@@ -389,6 +385,9 @@ body {
   line-height: 24px;
   letter-spacing: 0.32px;
   margin-top: 17.5px;
+  margin-right: 120px;
+  display: flex;
+  justify-content: space-around;
 }
 
 .footer-socmed-header {
