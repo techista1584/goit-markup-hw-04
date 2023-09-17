@@ -94,6 +94,18 @@ body {
   gap: 40px;
 }
 
+.nav-list-item {
+  position: relative;
+}
+
+.nav-list-item:hover .nav-list-item-link {
+  color: var(--ocean);
+}
+
+.nav-list-item:hover .nav-list-item-link::after {
+  width: 100%;
+}
+
 .nav-list-item-link {
   color: var(--navyblue);
   font-weight: 500;
@@ -101,8 +113,15 @@ body {
   letter-spacing: 0.32px;
 }
 
-.nav-list-item-link:hover {
-  color: var(--ocean);
+.nav-list-item-link::after {
+  content: "";
+  height: 4px;
+  width: 0;
+  background-color: var(--ocean);
+  border-radius: 2px;
+  position: absolute;
+  left: 0;
+  bottom: -25px;
 }
 
 .nav-list-item-link-active {
@@ -299,7 +318,7 @@ body {
   display: flex;
   width: 40px;
   height: 40px;
-  justify-content: center;
+  justify-content:center;
   align-items: center;
   border-radius: 40px;
   background-color: var(--iris);
@@ -321,23 +340,29 @@ body {
 
 .customer-list-items {
   padding: 16px 32px;
-  border-radius: 4px;
   border: 1px solid var(--light_slate);
+  transition: color 250ms cubic cubic-bezier(0.4, 0, 0.2, 1);
+  border-radius: 4px;
+  color: var(--light_slate);
 }
 
 .customer-list-items:hover {
-  border: 1px solid var(--iris);
+  border-color: var(--ocean);
+}
+
+.customer-list-items:hover .icon-clients-link {
+  color: var(--ocean);
+}
+
+.icon-clients-link {
+  color: var(--light_slate);
 }
 
 .customer-icon {
-  fill: var(--light_slate);
   width: 104px;
   height: 56px;
   flex-shrink: 0;
-}
-
-.customer-icon:hover {
-  fill: var(--iris);
+  fill: currentColor;
 }
 
 .footer {
@@ -345,20 +370,28 @@ body {
   flex-shrink: 0;
   padding-top: 101.5px;
   padding-bottom: 100px;
+  display: flex;
   justify-content: center;
-  /* align-items: center; */
 }
 
 .section-footer {
   display: flex;
-  justify-content:space-around;
 }
 
+.paragraph-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: left;
+}
+
+.logo-container {
+  margin-right: 120px;
+}
 .socmed-container {
-  /* display: flex;
+  display: flex;
   flex-direction: column;
   justify-content: left;
-  align-items: left; */
+  align-items: left;
 }
 
 .footer-logo {
@@ -385,9 +418,6 @@ body {
   line-height: 24px;
   letter-spacing: 0.32px;
   margin-top: 17.5px;
-  margin-right: 120px;
-  display: flex;
-  justify-content: space-around;
 }
 
 .footer-socmed-header {
